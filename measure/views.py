@@ -4,7 +4,7 @@ from .measure import get_temp_hum
 def index(request):
     return render(request, 'measure/index.html')
 
-def measure(request):
+async def measure(request):
     time, temperature, humidity = get_temp_hum()
     context = {
         'time': time,
